@@ -7,6 +7,7 @@ import submitIcon from "../Assets/images/icon-dice.svg";
 
 /** Import MUI components */
 import { Grid } from "@mui/material";
+import shadows from "@mui/material/styles/shadows";
 
 /** Material UI Styles */
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "0.8rem",
     backgroundColor: "#52ffa8",
     borderRadius: "50%",
+    "&:hover": {
+      boxShadow: "0px 0px 40px #52ffa8",
+    },
   },
   main: {
     marginBottom: "-2.5rem",
@@ -25,13 +29,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AdviceDevider(props) {
   const classes = useStyles();
-  // const theme = useTheme();
-
-  console.log("theme");
 
   return (
     <Grid container direction="row" className={classes.main}>
-      <Grid item className={classes.root} sx={{ boxShadow: 3 }}>
+      <Grid item className={classes.root}>
         <img src={submitIcon} alt="" className={classes.icon} />
       </Grid>
     </Grid>

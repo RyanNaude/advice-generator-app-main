@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import theme from "../../Assets/theme/theme";
 import { makeStyles } from "@mui/styles";
 import { useTheme } from "@emotion/react";
@@ -18,20 +18,25 @@ import AdviceIcon from "../Components/AdviceIcon";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.secondary.main,
-    width: "20rem",
-    padding: "1rem",
+    padding: "2rem 3rem 1rem 3rem",
+    borderRadius: "20px",
   },
   title: {
     color: theme.palette.adviceTitle.main,
   },
   mainAdvice: {
     color: theme.palette.adviceBody.main,
+    paddingTop: "1rem",
   },
 }));
 
 export default function AdviceCard(props) {
   const classes = useStyles();
   const theme = useTheme();
+
+  useEffect(() => {
+    handleChange();
+  }, []);
 
   function handleChange() {
     const requestOptions = {
@@ -46,7 +51,6 @@ export default function AdviceCard(props) {
           no: data.slip.id,
           advice: data.slip.advice,
         });
-        console.log(props.advice.no);
       })
       .catch((error) => console.log(error));
   }
@@ -64,7 +68,8 @@ export default function AdviceCard(props) {
           text={"ADVICE #" + props.advice.no}
           fonts={"12px"}
           variant={"adviceHeader"}
-          weight={"500"}
+          weight={"600"}
+          letSpace={"6px"}
         />
       </Grid>
       <Grid item className={classes.mainAdvice}>
@@ -72,7 +77,7 @@ export default function AdviceCard(props) {
           fonts={"28px"}
           weight={"800"}
           variant={"adviceBody"}
-          text={'"' + props.advice.advice}
+          text={'"' + props.advice.advice + '"'}
         />
       </Grid>
       <Grid item>

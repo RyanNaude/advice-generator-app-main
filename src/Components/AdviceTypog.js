@@ -8,17 +8,7 @@ import { useTheme } from "@emotion/react";
 import { Typography } from "@mui/material";
 
 /** Material UI Styles */
-const useStyles = makeStyles((theme) => ({
-  root: {
-    // color: theme.palette.primary.main,
-  },
-  adviceHeader: {
-    ...theme.typography.adviceHeader,
-  },
-  adviceBody: {
-    ...theme.typography.adviceBody,
-  },
-}));
+const useStyles = makeStyles((theme) => ({}));
 
 export default function AdviceTypog(props) {
   const classes = useStyles();
@@ -26,8 +16,12 @@ export default function AdviceTypog(props) {
 
   return (
     <Typography
-      className={classes.root}
-      style={{ fontSize: props.fonts, fontWeight: props.weight }}
+      style={{
+        fontSize: props.fonts,
+        fontWeight: props.weight,
+        letterSpacing: props.letSpace,
+        fontFamily: "Manrope",
+      }}
     >
       {props.text}
     </Typography>

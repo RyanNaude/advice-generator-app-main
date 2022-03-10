@@ -9,7 +9,6 @@ import { Grid } from "@mui/material";
 
 /** Custom Pages */
 import AdviceCard from "../../Pages/AdviceCard";
-import { borderRadius } from "@mui/system";
 
 /** Material UI Styles */
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +26,15 @@ export default function Main(props) {
 
   return (
     <Grid container justifyContent="center" alignItems="center">
-      <Grid item container className={classes.root} justifyContent="center" alignItems="center">
-        <Grid item xs={4} style={{borderRadius: "5%"}}>
-          <AdviceCard advice={props.advice} setAdvice={props.setAdvice}/>
+      <Grid
+        item
+        container
+        className={classes.root}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item xs={4} style={{ borderRadius: "5%" }}>
+          <AdviceCard advice={props.advice} setAdvice={props.setAdvice} />
         </Grid>
       </Grid>
     </Grid>

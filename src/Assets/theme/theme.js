@@ -1,8 +1,13 @@
 import { createTheme } from "@mui/material/styles";
 
-const primeCol = "#323A49";
-const secCol = "#4E5D73";
-const terCol = "#1F2632";
+// const primeCol = "#323A49";
+// const secCol = "#4E5D73";
+// const terCol = "#1F2632";
+
+const primeCol = "#1F2632";
+const secCol = "#323A49";
+// const terCol = "#";
+
 
 const lightBlue = "#cee4e9";
 const neonGreen = "#52ffa8";
